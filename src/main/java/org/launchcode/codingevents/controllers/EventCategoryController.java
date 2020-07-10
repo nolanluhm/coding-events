@@ -38,8 +38,9 @@ public class EventCategoryController {
     public String processCreateEventCategoryForm(@ModelAttribute @Valid EventCategory newEventCategory,
                                                  Model model, Errors errors) {
 
-        if(errors.hasErrors()) {
+        if (errors.hasErrors()) {
             model.addAttribute("title", "Create Category");
+            model.addAttribute(new EventCategory());
             return "eventCategories/create";
         }
 
